@@ -1,0 +1,81 @@
+[tool.poetry]
+name = "repo_template"
+version = "0.2.3"
+description = "Template description"
+authors = ["Ross <rostikvunarchuk@gmail.com>"]
+maintainers = ["Ross <rostikvunarchuk@gmail.com>"]
+repository = "https://github.com/darcsoel/repo_template"
+license = "BSD-3-Clause"
+keywords = ["python", "poetry", "template"]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+isort = "^5.12.0"
+pytest = "^7.4.2"
+pylint = "^2.17.7"
+bandit = "^1.7.5"
+xenon = "^0.9.1"
+mypy = "^1.5.1"
+toml = "^0.10.2"
+pre-commit = "^3.4.0"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # The following are specific to Black, you probably don't want those.
+  | venv/
+  | .idea/
+)/'''
+
+
+[tool.isort]
+multi_line_output = 3
+profile = "black"
+include_trailing_comma = true
+
+
+[tool.pylint.master]
+fail-under = 9.0
+init-hook="import sys; sys.path.append('src/')"
+
+
+[tool.pylint]
+max-line-length = 120
+disable = ["C0114"]
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+pythonpath = "src/"
+testpaths = "tests"
+
+
+[tool.bandit]
+tests = ["B201", "B301"]
+skips = ["B101", "B601"]
+
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+disallow_untyped_defs = true
+warn_return_any = true
+warn_unused_configs = true
+no_implicit_optional = true
+check_untyped_defs = true
+show_error_codes = true
