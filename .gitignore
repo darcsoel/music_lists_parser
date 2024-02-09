@@ -140,3 +140,7 @@ cython_debug/
 .idea/
 .vscode/
 !.vscode/launch.json
+
+difference.txt
+yt_music.csv
+apple_music.xml

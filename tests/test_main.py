@@ -5,10 +5,17 @@
 Unit tests
 """
 
+from entities import UnifiedSongModel
+from main import SongsComparator
 
-from main import Foo
+
+def test_comparator() -> None:
+    comparator = SongsComparator()
+    difference: set[UnifiedSongModel] = comparator.compare()
+    assert difference
 
 
-def test_1():
-    test = Foo()
-    assert test.main()
+def test_get_artists_list() -> None:
+    comparator = SongsComparator()
+    artists = comparator.get_artists()
+    assert artists

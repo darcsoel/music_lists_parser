@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "repo_template"
+name = "music_lists_parser"
 version = "0.2.3"
 description = "Template description"
 authors = ["Ross <rostikvunarchuk@gmail.com>"]
@@ -11,6 +11,7 @@ keywords = ["python", "poetry", "template"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+lxml = "^5.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
