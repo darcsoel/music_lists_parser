@@ -142,5 +142,5 @@ cython_debug/
 !.vscode/launch.json
 
 difference.txt
-yt_music.csv
-apple_music.xml
+# yt_music.csv
+# apple_music.xml
